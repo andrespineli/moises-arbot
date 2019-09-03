@@ -1,0 +1,27 @@
+{
+  "name": "moises-arbot",
+  "version": "1.0.0",
+  "description": "Arbitration bot for crypto profit operations",
+  "main": "app.js",
+  "scripts": {
+    "start:dev": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andrespineli/moises-arbot.git"
+  },
+  "author": "Andre Spineli",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andrespineli/moises-arbot/issues"
+  },
+  "homepage": "https://github.com/andrespineli/moises-arbot#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.1",
+    "sucrase": "^3.10.1"
+  }
+}
