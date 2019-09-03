@@ -1,13 +1,13 @@
 import { InvalidValueException } from "../../shared/exception/invalid-value.exception";
 
-export class FindExchangeDTO {
+export class FindAccountDTO {
     constructor(id) {
         this._id = id;
         this.validate();
     }
 
     static fromRequest(req) {
-        return new FindExchangeDTO(
+        return new FindAccountDTO(
             req.params.id
         );
     }
