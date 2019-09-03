@@ -1,0 +1,26 @@
+version: "3.7"
+services:
+
+  moises-nodejs:
+    build: ./docker/images/nodejs
+    container_name: ${APP_NAME}-nodejs
+    volumes:
+      - ./:/usr/share/nodejs
+    ports:
+      - "${HTTP_PORT}:4000"
+    links:
+      - moises-db
+    command: "yarn start:dev"
+
+  moises-db:
+    image: postgres:11
+    container_name: ${APP_NAME}-postgres
+    volumes:
+      - "./docker/.data/db:/var/lib/postgresql/data"
+    ports:
+      - "${DB_PORT}:5432"
+    restart: always
+    environment:
+      POSTGRES_USER: ${DB_USERNAME}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DATABASE: ${DB_DATABASE}

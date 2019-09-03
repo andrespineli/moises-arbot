@@ -1,0 +1,24 @@
+import { InvalidValueException } from "../../shared/exception/invalid-value.exception";
+
+export class FindExchangeDTO {
+    constructor(id) {
+        this._id = id;
+        this.validate();
+    }
+
+    static fromRequest(req) {
+        return new FindExchangeDTO(
+            req.params.id
+        );
+    }
+
+    validate() {
+        if (!this._id) {
+            throw new InvalidValueException('Parameter "id" is required.');
+        }
+    }
+
+    id() {
+        return this._id;
+    }
+}

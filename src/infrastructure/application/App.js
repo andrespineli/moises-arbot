@@ -14,7 +14,7 @@ class App {
     }
 
     server() {
-        this.app.listen(3000);
+        this.app.listen(4000);
     }
 
     router() {
